@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <style>
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(239, 234, 229, 0.85);
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: aquamarine;
+            background-image: url("https://www.21kschool.com/bd/wp-content/uploads/sites/27/2025/09/Importance-of-School.png");
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 1;
+        }
+
+        input,
+        textarea {
+            width: 300px;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            background-color: rgb(43, 76, 226);
+            color: white;
+            font-weight: bold;
+            width: 100px;
+            height: 30px;
+        }
+
+        .success {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+
+            background-color: lightgreen;
+            padding: 10px;
+
+            border: 2px solid green;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="regForm" class="container">
+
+        <h2>STUDENT REGISTRATION FORM</h2>
+
+        <label>Name:</label><br>
+        <input id="name" type="text" name="name"><br><br>
+
+        <label>Email:</label><br>
+        <input id="email" type="email" name="email"><br><br>
+
+        <label>Password:</label><br>
+        <input id="password" type="password" name="password"><br><br>
+
+        <label>Class:</label><br>
+        <input id="pclass" type="number" name="class"><br><br>
+
+        <label>Phone:</label><br>
+        <input id="phone" type="number" name="phone"><br><br>
+
+        <label>Address:</label><br>
+        <textarea id="address" rows="4"></textarea><br><br>
+
+        <button type="submit">Register</button>
+
+        <div id="result"></div>
+
+    </form>
+
+    <script>
+
+        document.getElementById("regForm").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let pclass = document.getElementById("pclass").value;
+            let address = document.getElementById("address").value;
+
+            document.getElementById("result").innerHTML = `
+                    <p><span class="success">Registration Successfully Done</span></p>
+                    <p><b>Name:</b> ${name}</p>
+                    <p><b>Email:</b> ${email}</p>
+                    <p><b>Phone:</b> ${phone}</p>
+                    <p><b>Class:</b> ${pclass}</p>
+                    <p><b>Address:</b> ${address}</p>
+                `;
+        });
+
+    </script>
+
+</body>
+
+</html>
